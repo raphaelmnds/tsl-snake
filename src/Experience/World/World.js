@@ -2,6 +2,7 @@ import Experience from '../Experience'
 import Environment from './Environment'
 import Terrain from './Terrain'
 import Grass from './Grass'
+import Flowers from './Flowers'
 import Sphere from './Sphere'
 import Snake from './Snake'
 import Wind from './Wind'
@@ -42,6 +43,7 @@ export default class World
         {
             this.snake = new Snake(this.terrain)
             this.grass = new Grass(this.terrain, this.snake, this.wind)
+            this.flowers = new Flowers(this.terrain, this.snake, this.wind)
         })
     }
 
@@ -50,6 +52,9 @@ export default class World
         if (this.grass) {
             this.grass.update()       
         }
+
+        if(this.flowers)
+            this.flowers.update()
 
         if(this.snake)
             this.snake.update()
