@@ -24,7 +24,7 @@ export default class Camera
             0.1,
             100
         )
-        this.instance.position.set(10, 8, 10)
+        this.instance.position.set(8, 8, 8)
         this.scene.add(this.instance)
     }
 
@@ -32,6 +32,8 @@ export default class Camera
     {
         this.controls = new OrbitControls(this.instance, this.canvas)
         this.controls.enableDamping = true
+        this.controls.minPolarAngle = Math.PI * 0.25
+        this.controls.maxPolarAngle = Math.PI * 0.45
     }
 
     resize()

@@ -121,7 +121,7 @@ export default class Grass
     setMaterial()
     {
         this.uniforms = {
-            width: uniform(0.08),
+            width: uniform(0.1),
             height: uniform(0.5),
             taper: uniform(0.8),
             colorBottom: uniform(new THREE.Color('#1f4d1a')),
@@ -137,7 +137,7 @@ export default class Grass
 
             bendRadius: uniform(0.3),
             bendStrength: uniform(0.4),
-            shrinkRadius: uniform(0.2),
+            shrinkRadius: uniform(0.4),
             shrinkHeight: uniform(0) // height multiplier on the body : 0 = no blade, 1 = full height
         }
 

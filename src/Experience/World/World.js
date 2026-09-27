@@ -4,7 +4,6 @@ import Sky from './Sky'
 import Terrain from './Terrain'
 import Grass from './Grass'
 import Flowers from './Flowers'
-import Sphere from './Sphere'
 import Snake from './Snake'
 import Wind from './Wind'
 import Marker from './Marker'
@@ -17,8 +16,6 @@ export default class World
         this.experience = new Experience()
         this.scene = this.experience .scene
         this.ressources = this.experience.ressources
-        
-        this.movingObjects = []
 
         this.environment = new Environment()
         this.sky = new Sky()
@@ -36,7 +33,6 @@ export default class World
         {
             this.marker.click()
 
-            // the snake loads with the ressources, so it may not exist yet
             if(this.snake)
                 this.snake.setTarget(point)
         })
@@ -52,7 +48,7 @@ export default class World
     update()
     {
         if (this.grass) {
-            this.grass.update()       
+            this.grass.update()
         }
 
         if(this.flowers)

@@ -173,13 +173,13 @@ export default class Snake
 
     setTrail()
     {
-        this.speed = 2
+        this.speed = 3
         this.turnSpeed = 6.27 // radians per second : how fast the head can rotate towards the target
         this.arriveDistance = 0.05 // close enough to the target to stop
 
         // wiggle : the head swings left / right around the heading while it moves, the trail records it as a S
         this.waves = 2 // number of S waves along the body
-        this.wiggleAngle = 1.5 // max swing in radians (~86°) : bigger = wider S
+        this.wiggleAngle = 1.1 // max swing in radians (~86°) : bigger = wider S
 
         this.direction = new THREE.Vector2() // reused every frame : head → target
 
@@ -193,9 +193,6 @@ export default class Snake
         this.target = null
         this.trail = this.samples.map((sample) => sample.clone()) // array of positions tail → head (last point is head)
         this.wiggleAmount = 1 // current wiggle strength (0 → 1), eases in when leaving and out when arriving
-
-        // heading : the steering angle on the ground, the axis of the S (0 = world +x, π/2 = world +z)
-        // start with the axis of the starting S : tail → head
 
         // heading : direction of the whole snake
         const head = this.samples[this.sampleCount - 1]

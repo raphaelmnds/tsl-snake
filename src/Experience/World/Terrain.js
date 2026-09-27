@@ -19,8 +19,8 @@ export default class Terrain
         this.uniforms = {
             frequency: uniform(0.15),
             amplitude: uniform(1.5),
-            colorTop: uniform(new THREE.Color('#cb27e0')),
-            colorBottom: uniform(new THREE.Color('#2e1fff'))
+            colorTop: uniform(new THREE.Color('#1b5531')),
+            colorBottom: uniform(new THREE.Color('#30482e'))
         }
 
         this.elevationNode = Fn(([xz]) =>
@@ -56,7 +56,7 @@ export default class Terrain
         const geometry = new THREE.PlaneGeometry(this.size, this.size, 128, 128)
         geometry.rotateX(-Math.PI * 0.5)
 
-        const material = new THREE.MeshBasicNodeMaterial({ wireframe: true })
+        const material = new THREE.MeshBasicNodeMaterial({ wireframe: false })
         
         const elevation = this.elevationNode(positionLocal.xz)
         const mixFactor = elevation.div(this.uniforms.amplitude).mul(0.5).add(0.5).clamp(0, 1) // Remap elevation from [-amplitude, amplitude] to [0, 1]

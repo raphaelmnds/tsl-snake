@@ -63,7 +63,6 @@ export default class Flowers
     {
         // all flower type weights : 1 / rarity
         const totalWeight = this.types.reduce((sum, type) => sum + 1 / type.rarity, 0)
-        console.log(totalWeight)
 
         let offset = 0
         for(const type of this.types)
