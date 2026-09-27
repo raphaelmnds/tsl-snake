@@ -1,5 +1,6 @@
 import Experience from '../Experience'
 import Environment from './Environment'
+import Sky from './Sky'
 import Terrain from './Terrain'
 import Grass from './Grass'
 import Flowers from './Flowers'
@@ -20,6 +21,7 @@ export default class World
         this.movingObjects = []
 
         this.environment = new Environment()
+        this.sky = new Sky()
         this.terrain = new Terrain()
         this.wind = new Wind()
         this.marker = new Marker(this.terrain)
